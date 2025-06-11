@@ -1,0 +1,65 @@
+@font-face {
+   font-family: "SF Pro Display";
+   src: url(../Fonts/SFPRODISPLAYREGULAR.OTF);
+}
+@font-face {
+   font-family: "Aptos extrabold";
+   src: url(../Fonts/aptos-extrabold.ttf);
+}
+
+
+body {
+   margin: 0px;
+   background-color: #DED7E0;
+}
+
+#mainDiv {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   height: 100vh;
+}
+#centralDiv {
+   width: 40vw;
+   height: 28.65vw;
+   display: flex;
+   flex-direction: row;
+   justify-content: center;
+   background-color: #6C5B78;
+   border-radius: 30px;
+   box-shadow: 0px 1.56vw 2.6vw #555;
+}
+#centeredDiv {
+   width: 18.75vw;
+   margin: auto;
+}
+#buttonDiv {
+   display: flex;
+   flex-direction: column-reverse;
+   margin-top: 1.93vw;
+   margin-bottom: 6.51vw;
+}
+
+#logo {
+   width: 16.88vw;
+   display: block;
+   margin: auto;
+   margin-top: 1.93vw;
+}
+
+button {
+   width: 18.75vw;
+   height: 2.6vw;
+   background-color: #DED7E0;
+   color: #6C5B78;
+   transition: 0.3s;
+   border-style: none;
+   border-radius: 30px;
+   margin-left: 0px;
+   margin-top: 1.04vw;
+   font-family: "Aptos extrabold";
+   font-weight: 600;
+   font-size: 1.3vw;
+   cursor: pointer;
+}
+#button:hover {background-color: #FFF}

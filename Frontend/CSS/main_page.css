@@ -1,0 +1,38 @@
+@font-face {
+   font-family: "SF Pro Display";
+   src: url(../Fonts/SFPRODISPLAYREGULAR.OTF);
+}
+@font-face {
+   font-family: "Aptos extrabold";
+   src: url(../Fonts/aptos-extrabold.ttf);
+}
+
+
+body {
+   margin: 0px;
+   background-color: #DED7E0;
+}
+
+#topNavbar {
+   height: 2.08vw;
+   width: 98vw;
+   margin: auto;
+   margin-top: 1vw;
+   border-radius: 10px 10px 10px 0px;
+}
+#sideNavbar {
+   height: 90vh;
+   width: 2.08vw;
+   margin-left: 1vw;
+   border-radius: 0px 0px 10px 10px;
+}
+#corner {
+   width: 2.08vw;
+   height: 2.08vw;
+   margin-top: -2.08vw;
+   margin-left: 1vw;
+}
+
+.navbar {
+   background-color: #6C5B78;
+}

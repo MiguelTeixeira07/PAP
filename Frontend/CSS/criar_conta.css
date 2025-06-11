@@ -1,0 +1,124 @@
+@font-face {
+   font-family: "SF Pro Display";
+   src: url(../Fonts/SFPRODISPLAYREGULAR.OTF);
+}
+@font-face {
+   font-family: "Aptos extrabold";
+   src: url(../Fonts/aptos-extrabold.ttf);
+}
+
+
+body {
+   margin: 0px;
+   background-color: #DED7E0;
+}
+
+#mainDiv {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   height: 100vh;
+}
+#centralDiv {
+   width: 40vw;
+   height: 28.65vw;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   background-color: #6C5B78;
+   border-radius: 30px;
+   box-shadow: 0px 1.56vw 2.6vw #555;
+}
+#centeredDiv {
+   width: 18.75vw;
+   margin: auto;
+}
+
+#backImg {
+   width: 100%;
+   transition: 0.3s;
+}
+#back {
+   width: 4.69vw;
+   height: 4.69vw;
+   background-color: unset;
+   border-style: none;
+   margin-left: 3.43vw;
+   margin-top: 3.43vw;
+}
+#backImg:hover {filter: brightness(120%)}
+
+#logo {
+   width: 6.51vw;
+   padding: 0.52vw;
+   display: block;
+   margin: auto;
+   margin-top: -10vw;
+   background-color: #6C5B78;
+   border-radius: 50%;
+   border-style: solid;
+   border-width: 0.26vw;
+   border-color: #574867;
+   overflow: visible;
+}
+
+#title {
+   width: 130%;
+   margin-left: -15%;
+   font-family: "SF Pro Display";
+   font-size: 1.82vw;
+   font-weight: bold;
+   color: #DED7E0;
+   letter-spacing: 0.02vw;
+   margin-top: 0.78vw;
+   margin-bottom: 0.78vw;
+   text-align: center;
+}
+
+#button {
+   width: 18.75vw;
+   height: 2.6vw;
+   background-color: #DED7E0;
+   color: #6C5B78;
+   transition: 0.3s;
+   border-style: none;
+   border-radius: 30px;
+   margin-top: 0.88vw;
+   margin-bottom: 1.85vw;
+   font-family: "Aptos extrabold";
+   font-weight: 600;
+   font-size: 1.3vw;
+}
+#button:hover {background-color: #FFF}
+
+form {
+   display: flex;
+   flex-direction: column;
+   gap: 0.78vw;
+}
+
+label {
+   color: #DED7E0;
+   font-family: "SF Pro Display";
+   font-size: 0.83vw;
+   letter-spacing: 0.05vw;
+   margin-left: 0.52vw;
+   margin-bottom: -0.62vw;
+}
+
+input {
+   padding: 0.63vw;
+   border: none;
+   border-radius: 10px;
+   background-color: #DED7E0;
+   color: #6C5B78;
+   font-family: "SF Pro Display";
+   font-size: 0.73vw;
+   font-weight: bold;
+   letter-spacing: 0.02vw;
+   outline: none;
+}
+
+button,#back{
+   cursor: pointer;
+}
