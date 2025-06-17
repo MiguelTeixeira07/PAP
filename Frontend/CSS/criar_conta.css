@@ -53,7 +53,7 @@ body {
    padding: 0.52vw;
    display: block;
    margin: auto;
-   margin-top: -10vw;
+   margin-top: -12vw;
    background-color: #6C5B78;
    border-radius: 50%;
    border-style: solid;
@@ -84,7 +84,7 @@ body {
    border-style: none;
    border-radius: 30px;
    margin-top: 0.88vw;
-   margin-bottom: 1.85vw;
+   margin-bottom: 0.5vw;
    font-family: "Aptos extrabold";
    font-weight: 600;
    font-size: 1.3vw;
@@ -121,4 +121,13 @@ input {
 
 button,#back{
    cursor: pointer;
+}
+
+#errorMsg {
+   width: 100%;
+   margin-bottom: 1.5vw;
+   color: #BB4444;
+   font-family: "SF Pro Display";
+   font-size: 0.83vw;
+   text-align: center;
 }

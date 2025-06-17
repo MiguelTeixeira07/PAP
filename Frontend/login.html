@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <title>MTStorage - Iniciar Sessão</title>
+      <meta charset="utf-8">
+      <link rel="icon" type="image/x-icon" href="Images/logo box.ico">
+      <link rel="stylesheet" href="CSS/login.css">
+      <script defer src="Javascript/login.js"></script>
+   </head>
+
+   <body>
+      <div id="mainDiv">
+         <div id="centralDiv">
+            <!--Voltar atrás-->
+            <button id="back" onclick="back()"><img id="backImg" src="Images/back.png"></button>
+            
+            <!--Logotipo-->
+            <img id="logo" src="Images/logo box.png">
+            
+            <div id="centeredDiv">
+               <form autocomplete="off">
+                  <!--Título-->
+                  <p id="title">Bem vindo de volta</p>
+                  <!--Nome de utilizador-->
+                  <label>Nome de Utilizador</label>
+                  <input type="text" name="username">
+                  <!--Password-->
+                  <label>Palavra-Passe</label>
+                  <input type="password" name="password">
+                  <!--Submeter-->
+                  <button type="submit" id="button" name="login">Iniciar sessão</button>
+               </form>
+               <p id="errorMsg"></p>
+            </div>
+         </div>
+      </div>
+   </body>
+
+</html>

@@ -13,18 +13,34 @@ body {
    background-color: #DED7E0;
 }
 
+#topContainer {
+   display: flex;
+}
+
+#logo {
+   width: calc(2.08vw - 7px);
+   margin-top: 1vw;
+   margin-left: 1vw;
+   background-color: #6C5B78;
+   padding: 3.5px;
+   border-radius: 10px;
+}
+
 #topNavbar {
    height: 2.08vw;
-   width: 98vw;
+   width: calc(100vw - 5vw);
    margin: auto;
    margin-top: 1vw;
-   border-radius: 10px 10px 10px 0px;
+   margin-left: 0.3vw;
+   margin-right: 1vw;
+   border-radius: 10px;
 }
 #sideNavbar {
-   height: 90vh;
+   height: calc(100vh - 5vw);
    width: 2.08vw;
+   margin-top: 0.3vw;
    margin-left: 1vw;
-   border-radius: 0px 0px 10px 10px;
+   border-radius: 10px;
 }
 #corner {
    width: 2.08vw;
@@ -33,6 +49,76 @@ body {
    margin-left: 1vw;
 }
 
+#mainContainer {
+   display: flex;
+   flex-direction: row;
+}
+
+#sidebar {
+   width: 15vw;
+   height: calc(100vh - 5vw);
+   background-color: #6C5B78;
+   border-radius: 10px;
+   margin-top: 0.3vw;
+   margin-left: 0.3vw;
+}
+
+#hamburger {
+   width: 100%;
+   height: auto;
+}
+#hamburger_button {
+   cursor: pointer;
+   margin-top: 8px;
+   background: none;
+   border-style: none;
+}
+
 .navbar {
    background-color: #6C5B78;
 }
+
+#mainDiv {
+   display: flex;
+   flex-direction: column;
+   width: calc(100vw - 18.38vw);
+   margin-left: 3vw;
+   margin-right: 3vw;
+}
+#searchBarDiv {
+   margin: auto;
+   margin-top: 5vw;
+   display: flex;
+   align-items: center;
+}
+#searchBar {
+   height: calc(2.1vw - 14px);
+   width: 17.5vw;
+   border-style: solid;
+   border-color: #6C5B78;
+   border-width: 2px;
+   border-radius: 10px;
+   background-color: #DED7E0;
+   margin-right: 0.27vw;
+   margin-left: 0.27vw;
+   padding: 5px;
+   font-family: "SF Pro Display";
+   font-size: 15px;
+   color: #6C5B78;
+   font-weight: bold;
+   transition: 0.3s;
+}
+#searchBar:focus {
+   outline: none;
+   border-color: #574867;
+}
+.searchButton {
+   height: 2.1vw;
+   width: 2.1vw;
+   border-radius: 25%;
+   background-color: #6C5B78;
+   border-style: none;
+   cursor: pointer;
+   transition: 0.3s;
+}
+.searchButton:hover {background-color: #574867;}

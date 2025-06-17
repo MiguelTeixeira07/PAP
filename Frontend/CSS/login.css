@@ -53,7 +53,7 @@ body {
    padding: 0.52vw;
    display: block;
    margin: auto;
-   margin-top: -10vw;
+   margin-top: -12vw;
    background-color: #6C5B78;
    border-radius: 50%;
    border-style: solid;
@@ -82,7 +82,7 @@ body {
    border-style: none;
    border-radius: 30px;
    margin-top: 1.85vw;
-   margin-bottom: 1.75vw;
+   margin-bottom: 0.5vw;
    font-family: "Aptos extrabold";
    font-weight: 600;
    font-size: 1.3vw;
@@ -118,6 +118,15 @@ input {
    margin-bottom: 1.04vw;
 }
 
-button,#back{
+button,#back {
    cursor: pointer;
+}
+
+#errorMsg {
+   width: 100%;
+   margin-bottom: 1.5vw;
+   color: #BB4444;
+   font-family: "SF Pro Display";
+   font-size: 0.83vw;
+   text-align: center;
 }

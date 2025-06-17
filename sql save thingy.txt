@@ -1,0 +1,32 @@
+sql.connect(config,(err)=>{
+   if(err){
+      console.log(err);
+   }
+
+   const request=new sql.Request();
+
+   const insertQuery="INSERT INTO users(username,pass,numTelefone) values('"+req.body.nome+"','"+req.body.pass+"','965308443');";
+
+   request.query(insertQuery,(err,result)=>{
+      if(err){
+            console.log(err);
+      }
+
+      sql.close();
+
+   });
+});
+
+
+const sql=require('mssql');
+
+const config={
+   user: "sa",
+   password: "CPtis2024",
+   server: "MaquinaDaCasa",
+   database: "test",
+   options: {
+      encrypt: true,
+      trustServerCertificate: true,
+   },
+};
