@@ -26,7 +26,7 @@ body {
    flex-direction: column;
    justify-content: center;
    background-color: #6C5B78;
-   border-radius: 30px;
+   border-radius: 1.56vw;
    box-shadow: 0px 1.56vw 2.6vw #555;
 }
 #centeredDiv {
@@ -82,11 +82,11 @@ body {
    color: #6C5B78;
    transition: 0.3s;
    border-style: none;
-   border-radius: 30px;
+   border-radius: 1.56vw;
    margin-top: 0.88vw;
    margin-bottom: 0.5vw;
    font-family: "Aptos extrabold";
-   font-weight: 600;
+   font-weight: 500;
    font-size: 1.3vw;
 }
 #button:hover {background-color: #FFF}
@@ -109,7 +109,7 @@ label {
 input {
    padding: 0.63vw;
    border: none;
-   border-radius: 10px;
+   border-radius: 0.52vw;
    background-color: #DED7E0;
    color: #6C5B78;
    font-family: "SF Pro Display";
@@ -117,6 +117,10 @@ input {
    font-weight: bold;
    letter-spacing: 0.02vw;
    outline: none;
+}
+input::placeholder {
+   color:#BB4444;
+   font-style: italic;
 }
 
 button,#back{

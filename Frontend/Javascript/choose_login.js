@@ -1,7 +1,7 @@
 function gotoCriarConta() {
-   location.href="criar_conta.html";
+   location.replace("criar_conta.html");
 }
 
 function gotoLogin() {
-   location.href="login.html";
+   location.replace("login.html");
 }

@@ -13,17 +13,15 @@ body {
    background-color: #DED7E0;
 }
 
-#topContainer {
-   display: flex;
-}
+#topContainer {display: flex;}
 
 #logo {
-   width: calc(2.08vw - 7px);
+   width: calc(2.08vw - 0.36vw);
    margin-top: 1vw;
    margin-left: 1vw;
    background-color: #6C5B78;
-   padding: 3.5px;
-   border-radius: 10px;
+   padding: 0.18vw;
+   border-radius: 0.52vw;
 }
 
 #topNavbar {
@@ -33,20 +31,70 @@ body {
    margin-top: 1vw;
    margin-left: 0.3vw;
    margin-right: 1vw;
-   border-radius: 10px;
+   border-radius: 0.52vw;
+   display: flex;
+   flex-direction: row-reverse;
 }
 #sideNavbar {
    height: calc(100vh - 5vw);
-   width: 2.08vw;
+   width: 2.2vw;
    margin-top: 0.3vw;
    margin-left: 1vw;
-   border-radius: 10px;
+   border-radius: 0.52vw;
 }
 #corner {
    width: 2.08vw;
    height: 2.08vw;
    margin-top: -2.08vw;
    margin-left: 1vw;
+}
+
+#account {
+   min-width: 7%;
+   height: 100%;
+   background-color: #847195;
+   border-style: none;
+   border-radius: 0vw 0.52vw 0.52vw 0vw;
+   transition: 0.3s;
+   font-family: "Aptos extrabold";
+   font-size: 100%;
+   color: #DED7E0;
+   cursor: pointer;
+   display: flex;
+   flex-direction: row-reverse;
+   align-items: center;
+   padding-left: 1vw;
+   justify-content: space-between;
+}
+#accIcon {
+   height: 90%;
+   margin-left: 3%;
+}
+#menuConta {
+   display: none;
+   flex-direction: column;
+   position: absolute;
+   background-color: #574867;
+   border-style: none;
+   border-radius: 0.52vw;
+   z-index: 1000;
+   box-shadow: 0px 0.3vw 2vw #333;
+}
+#menuConta:hover {background-color: #6C5B78;}
+.accManagementBtn {
+   width: 7vw;
+   height: 2.5vw;
+   background-color: #574867;
+   cursor: pointer;
+   font-size: 95%;
+   font-family: "Aptos extrabold";
+   color: #DED7E0;
+   border-style: none;
+   border-radius: 0.52vw;
+   transition: 0.3s;
+}
+.accManagementBtn:hover {
+   background-color: #6C5B78;
 }
 
 #mainContainer {
@@ -58,7 +106,7 @@ body {
    width: 15vw;
    height: calc(100vh - 5vw);
    background-color: #6C5B78;
-   border-radius: 10px;
+   border-radius: 0.52vw;
    margin-top: 0.3vw;
    margin-left: 0.3vw;
 }
@@ -69,7 +117,7 @@ body {
 }
 #hamburger_button {
    cursor: pointer;
-   margin-top: 8px;
+   margin-top: 0.42vw;
    background: none;
    border-style: none;
 }
@@ -92,18 +140,18 @@ body {
    align-items: center;
 }
 #searchBar {
-   height: calc(2.1vw - 14px);
+   height: calc(2.1vw - 0.73vw);
    width: 17.5vw;
    border-style: solid;
    border-color: #6C5B78;
-   border-width: 2px;
-   border-radius: 10px;
+   border-width: 0.1vw;
+   border-radius: 0.52vw;
    background-color: #DED7E0;
    margin-right: 0.27vw;
    margin-left: 0.27vw;
-   padding: 5px;
+   padding: 0.26vw;
    font-family: "SF Pro Display";
-   font-size: 15px;
+   font-size: 0.78vw;
    color: #6C5B78;
    font-weight: bold;
    transition: 0.3s;
@@ -122,3 +170,242 @@ body {
    transition: 0.3s;
 }
 .searchButton:hover {background-color: #574867;}
+.searchImg {width: 87%;}
+
+#addDivisao {
+   width: 90%;
+   height: 2.1vw;
+   background-color: #847195;
+   margin-top: 5%;
+   margin-left: 5%;
+   border-style: none;
+   border-radius: 0.52vw;
+   transition: 0.3s;
+   font-family: "Aptos extrabold";
+   font-size: 1vw;
+   color: #DED7E0;
+   cursor: pointer;
+}
+#addDivisao:hover {
+   background-color: #A494B3;
+   color: #F0EDF5;
+}
+
+#roomList{
+   width: 100%;
+   border-style: none;
+}
+.roomAccordion {
+   cursor: pointer;
+   width: 90%;
+   margin-top: 5%;
+   margin-left: 5%;
+   background-color: #604F6C;
+   height: 2.1vw;
+   font-family: "Aptos extrabold";
+   font-size: 1vw;
+   color: #DED7E0;
+   text-align: left;
+   padding-left: 10%;
+   border-style: none;
+   border-radius: 0.52vw;
+   transition: 0.3s;
+}
+.roomAccordion:hover {
+   background-color: #574867;
+}
+
+.newRoomDiv {
+   width: 90%;
+   margin-top: 5%;
+   margin-left: 5%;
+   display: flex;
+   flex-direction: column;
+   background-color: #604F6C;
+   border-radius: 0.52vw;
+}
+#newRoomName {
+   width: 80%;
+   margin-top: 5%;
+   margin-left: 5%;
+   margin-bottom: 5%;
+   padding: 5%;
+   border: none;
+   border-radius: 0.52vw;
+   background-color: #DED7E0;
+   color: #6C5B78;
+   font-family: "SF Pro Display";
+   font-size: 75%;
+   font-weight: bold;
+   letter-spacing: 0.02vw;
+   outline: none;
+}
+#buttonsDiv {
+   display: flex;
+}
+#cancel, #confirm{
+   cursor: pointer;
+   width: 41.5%;
+   height: 2.1vw;
+   background-color: #847195;
+   color: #DED7E0;
+   margin-left: 5%;
+   margin-right: 2.5%;
+   margin-bottom: 5%;
+   border-radius: 0.36vw;
+   border-style: none;
+   font-family: "Aptos extrabold";
+   font-size: 0.75vw;
+   transition: 0.3s;
+}
+#cancel:hover, #confirm:hover {
+   background-color: #A494B3;
+   color: #F0EDF5;
+}
+
+.newMovelDiv {
+   width: 75%;
+   margin-top: 1%;
+   margin-left: 7.5%;
+   display: flex;
+   flex-direction: column;
+   background-color: #604F6C;
+   border-radius: 0.52vw;
+}
+
+#newMovelName {
+   width: 80%;
+   margin-top: 5%;
+   margin-left: 5%;
+   margin-bottom: 5%;
+   padding: 5%;
+   border: none;
+   border-radius: 0.52vw;
+   background-color: #DED7E0;
+   color: #6C5B78;
+   font-family: "SF Pro Display";
+   font-size: 75%;
+   font-weight: bold;
+   letter-spacing: 0.02vw;
+   outline: none;
+}
+
+#customRoomMenu {
+   display: none;
+   flex-direction: column;
+   position: absolute;
+   background-color: #574867;
+   border-style: none;
+   border-radius: 0.52vw;
+   z-index: 1000;
+   box-shadow: 0px 0.3vw 2vw #333;
+}
+.roomManagementButton {
+   width: 10vw;
+   height: 2.5vw;
+   background-color: #574867;
+   cursor: pointer;
+   font-size: 95%;
+   font-family: "Aptos extrabold";
+   color: #DED7E0;
+   border-style: none;
+   border-radius: 0.52vw;
+   transition: 0.3s;
+}
+.roomManagementButton:hover {
+   background-color: #6C5B78;
+}
+
+.popup-fundo {
+   position: fixed;
+   top: 0; left: 0;
+   width: 100vw; height: 100vh;
+   background: rgba(0, 0, 0, 0.5);
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   z-index: 9999;
+   font-family: "Aptos extrabold";
+}
+
+.popup-caixa {
+   background-color: #6C5B78;
+   padding: 1vw;
+   border-radius: 0.52vw;
+   box-shadow: 0px 0.3vw 2vw #333;
+   text-align: center;
+   max-width: 20vw;
+   min-width: 13vw;
+}
+
+.popup-caixa p {
+   color: #DED7E0;
+   font-size: 1vw;
+   margin-bottom: 2vw;
+}
+
+.popup-botoes {
+   display: flex;
+   justify-content: space-around;
+}
+
+.popup-botoes button {
+   width: 40%;
+   height: 2.1vw;
+   background-color: #847195;
+   color: #DED7E0;
+   border: none;
+   border-radius: 0.52vw;
+   font-family: "Aptos extrabold";
+   font-size: 1vw;
+   cursor: pointer;
+   transition: 0.3s;
+}
+
+.popup-botoes button:hover {
+   background-color: #A494B3;
+   color: #F0EDF5;
+}
+
+.movelAccordion {
+   cursor: pointer;
+   width: 90%;
+   margin-top: 0.16vw;
+   margin-left: 5%;
+   margin-bottom: 0.16vw;
+   background-color: #6C5B78;
+   height: 2vw;
+   font-family: "Aptos extrabold";
+   font-size: 0.9vw;
+   color: #DED7E0;
+   text-align: left;
+   border-style: none;
+   border-radius: 0.36vw;
+   transition: 0.3s;
+}
+.movelAccordion:hover {
+   background-color: #847195;
+}
+
+.movelListDiv {
+   width: 75%;
+   margin-top: 1%;
+   margin-left: 7.5%;
+   display: flex;
+   flex-direction: column;
+   background-color: #604F6C;
+   border-radius: 0.52vw;
+   padding-top: 0.16vw;
+   padding-bottom: 0.16vw;
+} 
+
+#customMovelMenu {
+   display: none;
+   flex-direction: column;
+   position: absolute;
+   background-color: #574867;
+   border-style: none;
+   border-radius: 0.52vw;
+   z-index: 1000;
+   box-shadow: 0px 0.3vw 2vw #333;
+}

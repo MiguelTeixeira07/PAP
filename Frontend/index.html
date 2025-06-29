@@ -1,23 +1,79 @@
 <!DOCTYPE html>
 <html>
-   <head>
-      <title>MTStorage</title>
-      <meta charset="utf-8">
-      <link rel="icon" type="image/x-icon" href="Images/logo box.ico">
-      <link rel="stylesheet" href="CSS/choose_login.css">
-      <script defer src="Javascript/choose_login.js"></script>
-   </head>
-   <body>
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="icon" type="image/x-icon" href="Images/logo box.ico">
+   <link rel="stylesheet" href="CSS/main_page.css">
+   <script defer src="Javascript/main_page.js"></script>
+   <title>MTStorage</title>
+</head>
+<body>
+
+   <!--Topo da página-->
+   <div id="topContainer">
+      <img id="logo" src="Images/logo box.png">
+
+      <div id="topNavbar" class="navbar">
+         <button id="account"><img src="Images/accountIcon.png" id="accIcon"></button>
+      </div>
+
+      <!--Popup da conta-->
+      <div id="menuConta">
+         <button class="accManagementBtn" id="logout" onclick="logout()">Sair</button>
+      </div>
+   </div>
+
+   <!--Parte principal da página-->
+   <div id="mainContainer">
+
+      <!--Navbar Lateral-->
+      <div id="sideNavbar" class="navbar">
+         <button id="hamburger_button"><img id="hamburger" src="Images/hamburger.png"></button>
+      </div>
+
+      <!--Menu das divisões-->
+      <div id="sidebar">
+
+         <!--Lista das divisões-->
+         <div id="roomList"></div>
+
+         <!--Botão para adicionar uma nova divisão-->
+         <button id="addDivisao" onclick="suggestAddRoom()">+ Adicionar divisão</button>
+         
+         <!--Menu das divisões-->
+         <div id="customRoomMenu">
+            <button class="roomManagementButton" id="delRoom" onclick="delRoom()">Apagar divisão</button>
+            <button class="roomManagementButton"id="addMovel">Adicionar móvel</button>
+         </div>
+
+         <!--Menu dos móveis-->
+         <div id="customMovelMenu">
+            <button class="movelManagementButton" id="delMovel" onclick="delMovel()">Apagar Móvel</button>
+            <button class="movelManagementButton" id="addItem">Adicionar item</button>
+         </div>
+      </div>
+
+
+      <!--Lista dos itens-->
       <div id="mainDiv">
-         <div id="centralDiv">
-            <div id="centeredDiv">
-               <img id="logo" src="Images/Big logo.png">
-               <div id="buttonDiv">
-                  <button id="button" name="criarConta" onclick="gotoCriarConta()">Criar conta</button>
-                  <button id="button" name="login" onclick="gotoLogin()">Iniciar sessão</button>
+         <div id="searchBarDiv">            
+            <input type="text" id="searchBar" name="searchBar">
+            
+            <button type="submit" id="pesquisar" class="searchButton" name="pesquisar"><img class="searchImg" src="Images/search.png"></button>
+         </div>
+
+         <!--Popup de erro-->
+         <div id="popupConfirmacao" class="popup-fundo" style="display: none;">
+            <div class="popup-caixa">
+               <p id="popupMensagem">Tens a certeza que queres apagar esta divisão?</p>
+               <div class="popup-botoes">
+                  <button id="confirmarBtn">Sim</button>
+                  <button id="cancelarBtn">Cancelar</button>
                </div>
             </div>
          </div>
       </div>
-   </body>
+   </div>
+</body>
 </html>
