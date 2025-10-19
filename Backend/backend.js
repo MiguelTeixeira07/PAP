@@ -236,10 +236,122 @@ app.post("/delRoom",async (req,res)=>{
       const request=new sql.Request();
 
       //verifica se o username ou email já existem
-      const deleteQuery="delete from rooms where nome='"+req.body.nome+"'";
+      const deleteQuery="delete from rooms where nome='"+req.body.nome+"' and codUser="+loggedUser.codUser;
       
       request.query(deleteQuery);
    });
 });
+
+app.post("/delMovel",async (req,res)=>{
+   //estabelece a ligação com a base de dados
+   sql.connect(config,async (err)=>{
+      if(err){
+         console.log(err);
+      }
+
+      const request=new sql.Request();
+
+      let cod_room=await request.query("select codRoom from rooms where nome='"+req.body.nomeRoom+"' and codUser="+loggedUser.codUser);
+
+      //verifica se o username ou email já existem
+      const deleteQuery="delete from moveis where nome='"+req.body.nome+"' and codRoom="+cod_room.recordset[0].codRoom;
+      
+      request.query(deleteQuery);
+   });
+});
+
+app.post("/newItem",async (req,res)=>{
+   //estabelece a ligação com a base de dados
+   sql.connect(config,async (err)=>{
+      if(err){
+         console.log(err);
+      }
+
+      const request=new sql.Request();
+
+      let cod_room=await request.query("select codRoom from rooms where nome='"+req.body.room+"' and codUser="+loggedUser.codUser);
+
+      let cod_movel=await request.query("select codMovel from moveis where nome='"+req.body.movel+"' and codRoom="+cod_room.recordset[0].codRoom);
+      
+      //verifica se o username ou email já existem
+      let itemCheck=await request.query("select * from iitens where nome='"+req.body.nome+"'");
+
+      if(itemCheck.recordset===undefined||itemCheck.recordset.length<1){
+         //regista o novo utilizador na base de dados
+         const insertQuery="INSERT INTO itens(nome,quantidade,codMovel) values('"+req.body.nome+"','"+req.body.quant+"',"+cod_movel.recordset[0].codMovel+");";
+
+         request.query(insertQuery);
+
+         res.json({success:true});
+      }else{
+         res.json({success:false,errormsg:"O item já existe"});
+      }
+   });
+});
+
+app.post("/items", async (req, res) => {
+   sql.connect(config, async (err) => {
+      if (err) return res.json({ success: false, errormsg: "Erro na ligação à BD" });
+      
+      console.log(loggedUser.codUser);
+      try {
+         const request = new sql.Request();
+         
+         let query="SELECT i.nome, i.quantidade, r.nome AS divisao, m.nome AS movel FROM itens i JOIN moveis m ON i.codMovel = m.codMovel JOIN rooms r ON m.codRoom = r.codRoom WHERE r.codUser="+loggedUser.codUser;
+
+         if (req.body.divisao) {
+            query+=" AND r.nome='"+req.body.divisao+"'";
+            console.log(query);
+         }
+
+         if (req.body.movel) {
+            query+=" AND m.nome='"+req.body.movel+"'";
+            console.log(query);
+         }
+
+         if(req.body.searchTerm){
+            query+=" AND i.nome LIKE '%"+req.body.searchTerm+"%'"
+            console.log(query);
+         }
+
+         const result = await request.query(query);
+         res.json({ success: true, items: result.recordset });
+
+      } catch (e) {
+         console.error(e);
+         res.json({ success: false, errormsg: "Erro ao obter itens" });
+      }
+   });
+});
+
+app.post("/atualizarQuantidade",async (req,res)=>{
+   //estabelece a ligação com a base de dados
+   sql.connect(config,async (err)=>{
+      if(err){
+         console.log(err);
+      }
+
+      const request=new sql.Request();
+
+      request.query("update itens set quantidade="+req.body.quantidade+" where nome='"+req.body.nome+"'");
+   });
+});
+
+app.post("/delItem",async (req,res)=>{
+   //estabelece a ligação com a base de dados
+   sql.connect(config,async (err)=>{
+      if(err){
+         console.log(err);
+      }
+
+      const request=new sql.Request();
+
+      let cod_item=await request.query("SELECT i.codItem FROM itens i JOIN moveis m ON i.codMovel = m.codMovel JOIN rooms r ON m.codRoom = r.codRoom WHERE i.nome='"+req.body.nome+"' AND r.codUser="+loggedUser.codUser);
+
+      const deleteQuery="delete from itens where codItem="+cod_item.recordset[0].codItem;
+      
+      request.query(deleteQuery);
+   });
+})
 
 app.listen(port,"25.49.11.93");

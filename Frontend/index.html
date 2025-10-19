@@ -55,13 +55,16 @@
       </div>
 
 
-      <!--Lista dos itens-->
+      <!--Container da lista dos itens-->
       <div id="mainDiv">
          <div id="searchBarDiv">            
-            <input type="text" id="searchBar" name="searchBar">
+            <input type="text" id="searchBar" name="searchBar" autocomplete="off">
             
-            <button type="submit" id="pesquisar" class="searchButton" name="pesquisar"><img class="searchImg" src="Images/search.png"></button>
+            <button id="pesquisar" class="searchButton" name="pesquisar"><img class="searchImg" src="Images/search.png"></button>
          </div>
+
+         <!--Lista dos itens-->
+         <div id="itemList"></div>
 
          <!--Popup de erro-->
          <div id="popupConfirmacao" class="popup-fundo" style="display: none;">
@@ -70,6 +73,43 @@
                <div class="popup-botoes">
                   <button id="confirmarBtn">Sim</button>
                   <button id="cancelarBtn">Cancelar</button>
+               </div>
+            </div>
+         </div>
+
+         <!--Popup para adicionar um novo item-->
+         <div id="popupItem" class="popup-fundo" style="display: none;">
+            <div class="popup-caixa">
+               <p id="tituloNewItem">Adicionar Item</p>
+               <input type="text" id="nomeNovoItem" placeholder="Nome do item" autocomplete="off"/>
+
+               <input type="text" id="quantidadeInput" placeholder="Quantidade" min="1" autocomplete="off"/>
+
+               <div class="popup-botoes">
+                  <button id="cancelarNovoItem">Cancelar</button>
+                  <button id="confirmarNovoItem">Confirmar</button>
+               </div>
+            </div>
+         </div>
+
+         <!--Popup para alterar o móvel onde está um item-->
+         <div id="popupMoverItem" class="popup-fundo" style="display: none;">
+            <div class="popup-caixa">
+               <p id="tituloMoverItem">Mover Item</p>
+
+               <label for="selectDivisao">Escolher divisão:</label>
+               <select id="selectDivisao">
+                  <option value="">-- Seleciona uma divisão --</option>
+               </select>
+
+               <label for="selectMovel">Escolher móvel:</label>
+               <select id="selectMovel" disabled>
+                  <option value="">-- Seleciona um móvel --</option>
+               </select>
+
+               <div class="popup-botoes">
+                  <button id="cancelarMoverItem">Cancelar</button>
+                  <button id="confirmarMoverItem">Confirmar</button>
                </div>
             </div>
          </div>
